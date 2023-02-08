@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Contact Us</title>
+<style type="text/css">
+
+
+  @import 'https://fonts.googleapis.com/css?family=Raleway';
+
+
+div.container
+{
+    font-family: Raleway;
+    margin: 0 auto;
+  padding: 10em 3em;
+  text-align: center;
+}
+
+div.container a
+{
+    color: #FFF;
+    text-decoration: none;
+    font: 20px Raleway;
+    margin: 0px 10px;
+    padding: 10px 10px;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+
+
+/* Top and Bottom borders go out */
+div.topBotomBordersOut a:before, div.topBotomBordersOut a:after
+{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #FFF;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+div.topBotomBordersOut a:before
+{
+    top: 0px;
+    transform: translateY(10px);
+}
+
+div.topBotomBordersOut a:after
+{
+    bottom: 0px;
+    transform: translateY(-10px);
+}
+
+
+div.topBotomBordersOut a:hover:before, div.topBotomBordersOut a:hover:after
+{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/* Top and Bottom borders come in */
+div.topBotomBordersIn a:before, div.topBotomBordersIn a:after
+{
+    position: absolute;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #FFF;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+}
+
+div.topBotomBordersIn a:before
+{
+    top: 0px;
+    transform: translateY(-10px);
+}
+
+div.topBotomBordersIn a:after
+{
+    bottom: 0px;
+    transform: translateY(10px);
+}
+
+div.topBotomBordersIn a:hover:before, div.topBotomBordersIn a:hover:after
+{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/* Top border go down and Left border appears */
+div.topLeftBorders a:before
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 2px;
+    height: 0px;
+    background: #FFF;
+    content: "";
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+
+div.topLeftBorders a:after
+{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 2px;
+    background: #FFF;
+    content: "";
+    opacity: 1;
+    transition: all 0.3s;
+}
+
+div.topLeftBorders a:hover:before
+{
+    height: 100%;
+}
+
+div.topLeftBorders a:hover:after
+{
+    opacity: 0;
+    top: 100%;
+}
+
+/* Circle behind */
+div.circleBehind a:before, div.circleBehind a:after
+{
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    border: 4px solid #0277bd;
+    transform: translateX(-50%) translateY(-50%) scale(0.8);
+    border-radius: 50%;
+    background: transparent;
+    content: "";
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: -1;
+}
+
+div.circleBehind a:after
+{
+    border-width: 2px;
+    transition: all 0.4s;
+}
+
+div.circleBehind a:hover:before
+{
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) scale(1);
+}
+
+div.circleBehind a:hover:after
+{
+    opacity: 1;
+    transform: translateX(-50%) translateY(-50%) scale(1.3);
+}
+
+/* Brackets go out */
+div.brackets a:before, div.brackets a:after
+{
+    position: absolute;
+    opacity: 0;
+    font-size: 35px;
+    top: 0px;
+    transition: all 0.3s;
+}
+
+div.brackets a:before
+{
+    content: '(';
+    left: 0px;
+    transform: translateX(10px);
+}
+
+div.brackets a:after
+{
+    content: ')';
+    right: 0px;
+    transform: translateX(-10px);
+}
+
+div.brackets a:hover:before, div.brackets a:hover:after
+{
+    opacity: 1;
+    transform: translateX(0px);
+}
+
+
+/* Border from Y to X  */
+div.borderYtoX a:before, div.borderYtoX a:after
+{
+    position: absolute;
+    opacity: 0.5;
+    height: 100%;
+    width: 2px;
+    content: '';
+    background: #FFF;
+    transition: all 0.3s;
+}
+
+div.borderYtoX a:before
+{
+    left: 0px;
+    top: 0px;
+}
+
+
+div.borderYtoX a:after
+{
+    right: 0px;
+    bottom: 0px;
+}
+
+div.borderYtoX a:hover:before, div.borderYtoX a:hover:after
+{
+    opacity: 1;
+    height: 2px;
+    width: 100%;
+}
+
+/* Border X get width  */
+div.borderXwidth a:before, div.borderXwidth a:after
+{
+    position: absolute;
+    opacity: 0;
+    width: 0%;
+    height: 2px;
+    content: '';
+    background: #FFF;
+    transition: all 0.3s;
+}
+
+div.borderXwidth a:before
+{
+    left: 0px;
+    top: 0px;
+}
+
+div.borderXwidth a:after
+{
+    right: 0px;
+    bottom: 0px;
+}
+
+div.borderXwidth a:hover:before, div.borderXwidth a:hover:after
+{
+    opacity: 1;
+    width: 100%;
+}
+
+/* Pull down  */
+div.pullDown a:before
+{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0px;
+    top: 0px;
+    content: '';
+    background: #FFF;
+    opacity: 0.3;
+    transition: all 0.3s;
+}
+
+div.pullDown a:hover:before
+{
+    height: 100%;
+}
+
+div.pullRight a:before
+{
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    content: '';
+    background: #FFF;
+    opacity: 0.3;
+    transition: all 0.3s;
+}
+
+div.pullRight a:hover:before
+{
+    width: 100%;
+}
+
+/* Pull left  */
+div.pullLeft a:before
+{
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    right: 0px;
+    top: 0px;
+    content: '';
+    background: #FFF;
+    opacity: 0.3;
+    transition: all 0.3s;
+}
+
+div.pullLeft a:hover:before
+{
+    width: 100%;
+}
+
+/* Pull up and down  */
+div.pullUpDown a:before, div.pullUpDown a:after
+{
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    left: 0px;
+    content: '';
+    background: #FFF;
+    opacity: 0.3;
+    transition: all 0.3s;
+}
+
+div.pullUpDown a:before
+{
+    top: 0px;
+}
+
+div.pullUpDown a:after
+{
+    bottom: 0px;
+}
+
+div.pullUpDown a:hover:before, div.pullUpDown a:hover:after
+{
+    height: 100%;
+}
+
+/* Pull right and left  */
+div.pullRightLeft a:before, div.pullRightLeft a:after
+{
+    position: absolute;
+    width: 2px;
+    height: 100%;
+    top: 0px;
+    content: '';
+    background: #FFF;
+    opacity: 0.3;
+    transition: all 0.3s;
+}
+
+div.pullRightLeft a:before
+{
+    left: 0px;
+}
+
+div.pullRightLeft a:after
+{
+    right: 0px;
+}
+
+div.pullRightLeft a:hover:before, div.pullRightLeft a:hover:after
+{
+    width: 100%;
+}
+
+/* Highlight text out  */
+div.highlightTextOut a
+{
+    color: rgba(255, 255, 255, 0.3);
+}
+
+div.highlightTextOut a:before, div.highlightTextIn a:before
+{
+    position: absolute;
+    color: #FFF;
+    top: 0px;
+    left: 0px;
+    padding: 10px;
+    overflow: hidden;
+    content: attr(alt);
+    transition: all 0.3s;
+    transform: scale(0.8);
+    opacity: 0;
+}
+
+div.highlightTextOut a:hover:before, div.highlightTextIn a:hover:before
+{
+    transform: scale(1);
+    opacity: 1;
+}
+
+/* Highlight text in  */
+div.highlightTextIn a
+{
+    color: rgba(0, 0, 0, 0.4);
+}
+
+div.highlightTextIn a:before
+{
+    transform: scale(1.2);
+}
+
+    video{position:fixed; no-repeat; left:50%; z-index:-1000%; min-width:100%; min-height:100%;
+          transform: translate(-50%, -50%);}
+    .overlay{position:absolute; top:0; left:0; z-index:1; margin-left:45%}
+
+     .shift{float:right; margin-top:-19%;}
+     body{background-image:linear-gradient(#5B585E, black);margin:0; background-repeat:no-repeat; background-attachment:fixed;}
+#overlay22 {
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+;
+  z-index: 2;
+  cursor: pointer;
+}
+
+
+#text22{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  font-size: 50px;
+  color: white;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+   button{color:rbga(0,0,0,0);}
+
+
+
+
+
+
+html {
+  font-family: 'Montserrat', Arial, sans-serif;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  background: white;
+}
+
+button {
+  overflow: visible;
+}
+
+button, select {
+  text-transform: none;
+}
+
+button, input, select, textarea {
+  color: white;
+  font: inherit;
+  margin: 0;
+}
+
+input {
+  line-height: normal;
+}
+
+textarea {
+  overflow: auto;
+}
+
+#container {
+  border: solid 3px white;
+  max-width: 768px;
+  margin: 50px auto;
+  margin-left:-30%;
+  position: relative;
+}
+
+form {
+  padding: 37.5px;
+  margin: 50px 0;
+}
+
+h1 {
+  color: white;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 7px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.underline {
+  border-bottom: solid 2px white;
+  margin: -0.512em auto;
+  width: 130px;
+}
+
+.icon_wrapper {
+  margin: 50px auto 0;
+  width: 100%;
+}
+
+.icon {
+  display: block;
+  fill: white;
+  height: 50px;
+  margin: 0 auto;
+  width: 50px;
+}
+
+.email {
+	float: right;
+	width: 45%;
+}
+
+input[type='text'], [type='email'], select, textarea {
+	background: none;
+  border: none;
+	border-bottom: solid 2px white;
+	color: white;
+	font-size: 1.000em;
+  font-weight: 400;
+  letter-spacing: 1px;
+	margin: 0em 0 1.875em 0;
+	padding: 0 0 0.875em 0;
+  text-transform: uppercase;
+	width: 100%;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+input[type='text']:focus, [type='email']:focus, textarea:focus {
+	outline: none;
+	padding: 0 0 0.875em 0;
+}
+
+.message {
+	float: none;
+}
+
+.name {
+	float: left;
+	width: 45%;
+}
+
+select {
+  background: url('https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-ios7-arrow-down-32.png') no-repeat right;
+  outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.subject {
+  width: 100%;
+}
+
+.telephone {
+  width: 100%;
+}
+
+textarea {
+	line-height: 150%;
+	height: 150px;
+	resize: none;
+  width: 100%;
+}
+
+::-webkit-input-placeholder {
+	color: white;
+}
+
+:-moz-placeholder { 
+	color: white;
+	opacity: 1;
+}
+
+::-moz-placeholder {
+	color: white;
+	opacity: 1;
+}
+
+:-ms-input-placeholder {
+	color: white;
+}
+
+#form_button {
+  background: none;
+  border: solid 2px white;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 0.875em;
+  font-weight: bold;
+  outline: none;
+  padding: 20px 35px;
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+}
+
+#form_button:hover {
+  background: black;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  #container {
+    margin: 20px auto;
+    width: 95%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 26px;
+  }
+  
+  .underline {
+    width: 68px;
+  }
+  
+  #form_button {
+    padding: 15px 25px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  h1 {
+    font-size: 18px;
+  }
+  
+  .icon {
+    height: 35px;
+    width: 35px;
+  }
+  
+  .underline {
+    width: 53px;
+  }
+  
+  input[type='text'], [type='email'], select, textarea {
+    font-size: 0.875em;
+  }
+}
+body{background-color:black;}
+.boxsize{  margin-left:-26%;}
+
+  .floating{animation-name:floating; animation-duration:3s; animation-iteration-count: infinite; animation-timing-function:ease-in-out; margin-left:30px; margin-top:5px;}
+
+    @keyframes floating{ 0%{transform:translate(0, 0px);} 50%{transform:translate(0, 15px);}100%{transform:translate(0, -0px);}}
+
+</style>
+
+  <div class="overlay">
+        <div class="container red topBotomBordersOut">
+        <div class="shift">
+                      <a href="https://lucy.highpoint.edu/~jallah/FinalProject/index.html">HOME</a>
+          <a href="https://lucy.highpoint.edu/~jallah/FinalProject/history.html">HISTORY</a>
+          <a href="https://lucy.highpoint.edu/~jallah/FinalProject/film.html">FILM</a>
+          <a href="https://lucy.highpoint.edu/~jallah/FinalProject/literatures.html">LITERATURE</a>
+          <a href="https://lucy.highpoint.edu/~jallah/FinalProject/topics.html">TOPICS</a>
+        </div>
+      <img style="margin-left:-94%; margin-top:-19%; float:left" src="scifycom.png" width="180">
+
+
+</head>
+
+
+<body>
+<div class="boxsize">
+<div id="container">
+  <h1>&bull; Contact Us! &bull;</h1>
+  <div class="underline">
+  </div>
+  <div class="icon_wrapper">
+
+<div class="floating">
+<a href="mailto:jallahme@highpoint.edu"><img style="margin-left:-5%" src="mail.png" width="30"></a>
+</div>
+
+  </div>
+  <form action="#" method="post" id="contact_form">
+    <div class="name">
+      <label for="name"></label>
+      <input type="text" placeholder="My name is" name="name" id="name_input" required>
+    </div>
+    <div class="email">
+      <label for="email"></label>
+      <input type="email" placeholder="My e-mail is" name="email" id="email_input" required>
+    </div>
+    <div class="telephone">
+      <label for="name"></label>
+      <input type="text" placeholder="My number is" name="telephone" id="telephone_input" required>
+    </div>
+    <div class="subject">
+      <label for="subject"></label>
+      <select placeholder="Subject line" name="subject" id="subject_input" required>
+        <option disabled hidden selected>Subject line</option>
+        <option>I'd like to start a project</option>
+        <option>I'd like to ask a question</option>
+        <option>I'd like to make a proposal</option>
+      </select>
+    </div>
+    <div class="message">
+      <label for="message"></label>
+      <textarea name="message" placeholder="I'd like to chat about" id="message_input" cols="30" rows="5" required></textarea>
+    </div>
+    <div class="submit">
+      <input type="submit" value="Send Message" id="form_button" />
+    </div>
+  </form><!-- // End form -->
+</div><!-- // End #container -->
+</div>
+
+
+    <footer>
+    <small style="color:white"> &copy; Copyright 2022 Joellen Allah-Mensah </small>
+    </footer>
+</body>
+</html>
